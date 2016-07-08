@@ -24,5 +24,7 @@ body { background:url(images/bg_body.jpg) repeat;}
 .content_hp h2.titre2 span {display:block; background:url(images/icone2.jpg) left top no-repeat; padding-bottom: 7px;}
 .content_hp h2.titre3 span {display:block; background:url(images/icone3.jpg) left top no-repeat; padding-bottom: 7px;}
 
-.content_hp article p {
+h3{
+    margin-top: 20px;
 }
+

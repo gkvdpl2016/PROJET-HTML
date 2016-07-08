@@ -5,9 +5,27 @@
     <meta charset="utf-8">
 	
     <title>GK Tea : Site des meilleurs thés GK</title>             
+	<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="ie7.css">
+	<![endif]-->
+	<!--[if IE gte 8]>
+	<link rel="stylesheet" type="text/css" href="ie8.css">
+	<![endif]-->
+	<!--[if !IE]><!-->
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="ie7.css"><![endif]-->
-	<!--[if IE]><link rel="stylesheet" type="text/css" href="ie8.css"><![endif]-->
+	<!--<![endif]-->
+	
+	<script type="text/javascript">
+	function submitForm(){
+		var em = document.getElementById('email').innerHTML;
+		var frm = document.getElementByTagName('form') ;
+		var xhr = new XMLHttpRequest();
+		
+		xhr.open('GET', 'email.php' + em , false);
+		xhr.send(null);
+		frm.submit();
+	}
+	</script>
 </head>
     
     <body oncontextmenu="return false">     
@@ -147,8 +165,8 @@
                     <div id="newsletter">                    	
                     	<h2>Newsletter</h2>
                         <p>Ne loupez pas le meilleur de l'actualité du thé et de GK Tea !</p>
-                        <form onsubmit="">
-                          <input name="email" type="email" placeholder="Mon adresse email" required=""> <!-- Remplir ce champ est requis -->
+                        <form action="email.php" method="get" onsubmit="submitForm()">
+                          <input name="email" id="email" type="email" placeholder="Mon adresse email" required=""> <!-- Remplir ce champ est requis -->
                           <br>
                           <input type="submit" value="Je m'inscris">
                         </form>
